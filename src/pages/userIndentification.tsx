@@ -39,7 +39,7 @@ export function UserIdentification(){
       <View  style  = {styles.content} >
         <View  style  = {styles.form}>
           <Text style = {styles.emoji}>
-            *
+            😀
           </Text>
           <Text style = {styles.title}>
             Como podemos {'\n'}
