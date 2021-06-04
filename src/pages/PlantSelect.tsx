@@ -40,6 +40,22 @@ export function PlantSelect(){
   const   [loadingMore,setLoadingMore] = useState(false);
   const   [loadedAll,setLoadedAll] = useState(false);
 
+  async function fetchPlants(){
+    const {data} = await api.get(`plants?_sort=name&_order=asc&_page=${page}&_limit=8 `);
+    if(!data)
+     return setLoading(true);
+
+     if(page >  1 ){
+    setPlants(oldValue => [...oldValue, ...data]);
+    setFilteredPlants(oldValue => [...oldValue,...data])
+     }else{
+      setPlants(data);
+      setFilteredPlants(data);
+     }
+     setLoading(false);
+     setLoadingMore(false);
+         };
+         
   function handleEnvironmentSelected(environment:string){
     setEnvironmentSelected(environment);
     if(environment == 'all')
@@ -50,26 +66,13 @@ export function PlantSelect(){
       );
       setFilteredPlants(filtered);
   }
-  async function fetchPlants(){
-    const {data} = await api.get(`plants?_sort=name&_order=asc&_page=${page}&_limit=8 `);
-    if(!data)
-     return setLoading(true);
-     if(page >  1 ){
-    setPlants(oldValue => [...oldValue, ...data]);
-    setFilteredPlants(oldValue => [...oldValue,...data])
-     }else{
-      setPlants(data);
-      setFilteredPlants(data);
-     }
-     setLoading(false);
-     setLoadingMore(false);
-         }
+
 
 function handleFetchMore(distance:number){
   if(distance < 1)
-    return ;
+    return  ;
     setLoadingMore(true);
-    setPage(oldValue => oldValue+1);
+    setPage(oldValue => oldValue + 1);
     fetchPlants();
 }
 
@@ -88,7 +91,6 @@ function handleFetchMore(distance:number){
   },[])
 
   useEffect(() => {
-
     fetchPlants(); 
   },[])
 
@@ -134,10 +136,10 @@ function handleFetchMore(distance:number){
       handleFetchMore(distanceFromEnd)
     }
     ListFooterComponent = {
-      loadingMore ?
-    <ActivityIndicator color = {colors.green}/>
-      : <> </>
-  }
+      loadingMore 
+      ?<ActivityIndicator color = {colors.green}/>
+      : <></>
+      }
       />
   </View>
   </View>
