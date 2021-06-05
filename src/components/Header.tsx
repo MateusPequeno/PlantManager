@@ -1,4 +1,5 @@
-import React from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, {useEffect,useState} from 'react';
 import {StyleSheet,
         Text,
         Image,
@@ -11,11 +12,26 @@ import  colors  from '../styles/colors';
 import fonts from '../styles/fonts';
 
 export function Header(){
+  //ARMAZENAR ESTADO
+  const [userName,setUserName] = useState<string>();
+
+  useEffect(() => {
+    async function loadStorageUserName(){     //Chave.
+      //Await por ter tempo de espera
+      const user = await AsyncStorage.getItem('@plantmanager:user');
+      setUserName(user || '');
+      //Ou aceita o nome de usuário digitado ou retorna nada. 
+    }
+    loadStorageUserName();  
+  },[userName]);  
+  //Ao alterar o userName chama o useEffect.
   return(
     <View style = {styles.container}>
       <View>
         <Text style = {styles.greeting}>Olá</Text>
-        <Text style = {styles.userName}>Mateus</Text>
+        <Text style = {styles.userName}>
+          {userName}
+          </Text>
       </View>
       <Image source = {UserImg} style = {styles.image}  />
     </View>

@@ -25,6 +25,6 @@ yarn add @react-navigation/native
 expo install react-native-gesture-handler react-native-reanimated
  react-native-screens react-native-safe-area-context 
  @react-native-community/masked-view
-
+//json-server ./src/services/server.json --host 192.168.0.10 --port 3333 --delay 700
  yarn add @react-navigation/stack
 */
