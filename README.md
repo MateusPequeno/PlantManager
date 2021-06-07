@@ -1,7 +1,7 @@
 <div align="center">
   <img src="assets/icon.png" width="150" />
   <h1>PlantManager</h1>
-  <p> Aplicação para lembrar as pessoas de regar suas plantas</p>
+  <p> App to remember people to water their plants, developed at NLW#5 from RocketSeat.</p>
  
 </div>
 
