@@ -4,9 +4,7 @@
   <p> Aplicação para lembrar as pessoas de regar suas plantas</p>
   <p>
     
-    <a href="https://www.linkedin.com/in/mateus-pequeno-6b6311182/" target="_blank" rel="noopener noreferrer">
-      
-    </a>          
+    <a href="https://www.linkedin.com/in/mateus-pequeno-6b6311182/" target="_blank" rel="noopener noreferrer">          </a>          
    
   </p>
 </div>
@@ -47,7 +45,7 @@ Several places use plants, be it their home or business, and nowadays the human 
 *Clone the project and access the folder*
 
 ```bash
-$ git clone https://github.com/hmartiins/plantmanager 
+$ git clone https://github.com/MateusPequeno/PlantManager.git
 $ cd plantmanager
 ```
 
@@ -67,13 +65,3 @@ $ yarn start
 # Well done, PlantManager is started!
 ```
 <br>
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-<hr>
-<div align="center">
-  <sub>Copyright © 2021-present, Mateus Pequeno.</sub>
-</div>
-<hr>
