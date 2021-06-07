@@ -2,13 +2,7 @@
   <img src="assets/icon.png" width="150" />
   <h1>PlantManager</h1>
   <p> Aplicação para lembrar as pessoas de regar suas plantas</p>
-  <p>
-   
-    <a href="https://www.linkedin.com/in/mateus-pequeno-6b6311182/" target="_blank" rel="noopener noreferrer">
-     
-    </a>          
-    <img alt="GitHub" src="https://img.shields.io/github/license/hmartiins/plantmanager?color=%232196F3">
-  </p>
+ 
 </div>
 
 # 👀 About
