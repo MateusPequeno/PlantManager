@@ -13,7 +13,7 @@ import {Header} from '../components/Header';
 import { FlatList } from 'react-native-gesture-handler';
 import { loadPlant, PlantProps, plantSave, removePlant } from '../libs/storage';
 import { formatDistance } from 'date-fns/esm';
-import { pt } from 'date-fns/locale';
+import { pt, ptBR } from 'date-fns/locale';
 import { PlantCardSecondary } from '../components/PlantCardSecondary';
 import { Load } from '../components/Load';
 
@@ -52,8 +52,9 @@ export function MyPlants(){
       const nextTime = formatDistance(
         new Date(plantsStoraged[0].dateTimeNotification).getTime(),
         new Date().getTime(),
-        {locale:pt}        
-        );
+        { locale: ptBR }
+      );
+
         setNextWatered(
           `Não esqueça de regar a ${plantsStoraged[0].name} à ${nextTime}horas. `
         );

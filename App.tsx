@@ -19,9 +19,19 @@ export default function App() {
       async notification => {
         const data = notification.request.content.data.plant as PlantProps
         //Detalhes da planta em notification
+        console.log(data);
+      });
+      return () => subscription.remove();  
+
+    /*   async function notifications () {        
+        await Notifications.cancelAllScheduledNotificationsAsync();
+        const data = await Notifications.getAllScheduledNotificationsAsync();     
+        console.log("Notificações agendadas");
+        console.log(data); 
       }
-    );
-  },[])
+      notifications(); */
+  },[]);
+
   if(!fontsLoaded)
   return<AppLoading/>
 
